@@ -8,9 +8,6 @@ import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
 import org.springframework.jms.config.JmsListenerContainerFactory;
 import org.springframework.jms.connection.CachingConnectionFactory;
 import org.springframework.jms.core.JmsTemplate;
-import org.springframework.jms.support.converter.MappingJackson2MessageConverter;
-import org.springframework.jms.support.converter.MessageConverter;
-import org.springframework.jms.support.converter.MessageType;
 import org.springframework.stereotype.Component;
 
 import javax.jms.ConnectionFactory;
