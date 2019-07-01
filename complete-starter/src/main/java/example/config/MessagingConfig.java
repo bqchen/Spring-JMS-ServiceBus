@@ -15,11 +15,11 @@ import javax.jms.ConnectionFactory;
 @Component
 public class MessagingConfig {
 
-    @Value("${spring.application.name}")
-    private String clientId;
-
     @Value("${azure.servicebus.connection-string}")
     private String connectionString;
+
+    @Value("${spring.application.name}")
+    private String clientId;
 
     @Bean
     public ConnectionFactory jmsConnectionFactory() {
@@ -30,7 +30,7 @@ public class MessagingConfig {
         jmsConnectionFactory.setClientID(clientId);
         jmsConnectionFactory.setUsername(csb.getSasKeyName());
         jmsConnectionFactory.setPassword(csb.getSasKey());
-        jmsConnectionFactory.setReceiveLocalOnly(true);
+//        jmsConnectionFactory.setReceiveLocalOnly(true);
         return new CachingConnectionFactory(jmsConnectionFactory);
     }
 
@@ -41,12 +41,22 @@ public class MessagingConfig {
         return returnValue;
     }
 
+    // JmsListenerContainerFactory for Queue
     @Bean
     public JmsListenerContainerFactory jmsListenerContainerFactory(ConnectionFactory connectionFactory) {
         DefaultJmsListenerContainerFactory returnValue = new DefaultJmsListenerContainerFactory();
         returnValue.setConnectionFactory(connectionFactory);
         return returnValue;
     }
+
+//    // JmsListenerContainerFactory for Topic
+//    @Bean
+//    public JmsListenerContainerFactory topicJmsListenerContainerFactory(ConnectionFactory connectionFactory) {
+//        DefaultJmsListenerContainerFactory returnValue = new DefaultJmsListenerContainerFactory();
+//        returnValue.setConnectionFactory(connectionFactory);
+//        returnValue.setSubscriptionDurable(Boolean.TRUE);
+//        return returnValue;
+//    }
 
 //    @Bean // Serialize message content to json using TextMessage
 //    public MessageConverter jacksonJmsMessageConverter() {

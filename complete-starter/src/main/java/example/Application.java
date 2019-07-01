@@ -27,10 +27,17 @@ public class Application {
 
         logger.info("Sending message");
 
+        // Send messages to the queue
         for (int i = 0; i < totalSend; i++) {
             System.out.printf("Sending message %d.\n", i + 1);
             jmsTemplate.convertAndSend("testqueue", new Email("info@example.com", "Hello"));
         }
+
+//        // Send messages to the topic
+//        for (int i = 0; i < totalSend; i++) {
+//            System.out.printf("Sending message %d.\n", i + 1);
+//            jmsTemplate.convertAndSend("testtopic", new Email("info@example.com", "Hello"));
+//        }
 
     }
 
