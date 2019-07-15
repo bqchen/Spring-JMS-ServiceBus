@@ -396,4 +396,4 @@ The `JmsListener` annotation defines the name of the `Destination` that this met
 
 Now that you've learned the basics of Spring Messaging with Service Bus queues. To learn Spring Messaging with Service Bus topics, see the following article:
 
-[Spring Messaging with Azure Service Bus Topics](./Getting%20Started%20Spring%20Messaging%20with%20Azure%20Service%20Bus%20Topics%20v1.0.0.md)
+[Spring Messaging with Azure Service Bus Topics](https://github.com/bqchen/Spring-JMS-ServiceBus/blob/master/Getting%20Started%20Spring%20Messaging%20with%20Azure%20Service%20Bus%20Topics%20v1.0.1.md)
