@@ -46,10 +46,6 @@ In this tutorial, the namespace is named `"testsbusns"`, the topic is named `"te
 >>
 > &emsp;*c. have an access policy with read/write access for your topic*
 
-[^_^]: ## Create a Spring Boot application
-
-[^_^]: You can create a custom application using the [Spring Initializr](https://start.spring.io/). Note that Spring Boot is not specifically needed to use Spring JMS and there are many non-Boot Spring applications that use Spring JMS. However, it is exceptionally easy to start using Spring Boot. Between Spring Boot and Spring JMS, there is very little code to write. Spring Boot, Spring JMS and the Qpid JMS client are doing most of the work. Therefore, in this guide, a simple Spring Boot application is used.
-
 ## Configure your Spring Boot application to use the Azure Service Bus Starter
 
 1. After creating your Spring Boot application,  locate the `pom.xml` file in the directory of your app; for example:
