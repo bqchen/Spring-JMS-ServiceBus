@@ -209,8 +209,8 @@ public class MessagingConfig {
     @Value("${azure.servicebus.connection-string}")
     private String connectionString;
 
-    @Value("${azure.servicebus.connection-string}")
-    private String connectionString;
+    @Value("${spring.application.name}")
+    private String clientId;
 
     @Bean
     public ConnectionFactory jmsConnectionFactory() {
