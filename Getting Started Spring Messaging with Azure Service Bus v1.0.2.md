@@ -18,21 +18,51 @@ The following prerequisites are required in order to follow the steps in this tu
 
 <span id="Createqueue">
 
-## Create a Service Bus queue / topic
+## Create a Service Bus queue
 
 </span>
 
-In your Azure subscription, you can follow [Quickstart: Use Azure portal to create a Service Bus queue](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-quickstart-portal) to create a queue or follow [Quickstart: Use the Azure portal to create a Service Bus topic and subscriptions to the topic](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal#next-steps) to create a topic and a subscription.
+In your Azure subscription, you can follow [Quickstart: Use Azure portal to create a Service Bus queue](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-quickstart-portal) to create a queue.
 
-a. Read the quick **overview** of Service Bus **queues** / **topics**.
+a. Read the quick [**overview**](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-quickstart-portal) of Service Bus **queues**.
 
 b. Create a Service Bus **namespace**.
 
 c. Get the **connection string**.
 
-d. Create a Service Bus **queue** / **topic**.
+d. Create a Service Bus **queue**.
 
-In this tutorial, the namespace is named `"testsbusns"`, the queue is named `"testqueue"`, the topic is named `"testtopic"` and the subscription is named `"mysubscription"`. In your own application, you can configure your namespace, queue, topic and subscription as you prefer.
+In this tutorial, the namespace is named `"testsbusns"` and the queue is named `"testqueue"`. In your own application, you can configure your namespace and queue as you prefer.
+
+> **Note**
+>>
+> The Service Bus namespace must:
+>>
+> &emsp;*a. allow access from all networks*
+>>
+> &emsp;*b. be Premium or higher (lower tiers have some limitations)*
+>>
+> &emsp;*c. have an access policy with read/write access for your queue*
+
+<span id="Createtopic">
+
+## Create a Service Bus topic
+
+</span>
+
+In your Azure subscription, you can follow [Quickstart: Use the Azure portal to create a Service Bus topic and subscriptions to the topic](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal) to create a topic and a subscription.
+
+a. Read the quick [**overview**](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal) of Service Bus **topics**.
+
+b. Create a Service Bus **namespace**.
+
+c. Get the **connection string**.
+
+d. Create a Service Bus **topic**.
+
+e. Create a **subscription** to the topic in the namespace.
+
+In this tutorial, the namespace is named `"testsbusns"`, the topic is named `"testtopic"` and the subscription is named `"mysubscription"`. In your own application, you can configure your namespace, topic and subscription as you prefer.
 
 > **Note**
 >>
