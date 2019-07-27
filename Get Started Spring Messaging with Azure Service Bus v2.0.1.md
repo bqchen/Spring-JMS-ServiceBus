@@ -1,9 +1,4 @@
-Get Started: Spring Messaging with Azure Service Bus
-===
-
-In this article:
-
-[toc]
+# Get Started: Spring Messaging with Azure Service Bus
 
 ## Overview
 
@@ -45,9 +40,13 @@ The following prerequisites are required in order to follow the steps in this ar
     d. Create a **subscription** to the topic in the namespace.
 
 > **Note**
+> >
 > The Service Bus namespace must:
+> >
 > &emsp;*a. allow access from all networks*
+> >
 > &emsp;*b. be Premium or higher (lower tiers have some limitations)*
+> >
 > &emsp;*c. have an access policy with read/write access for your queue / topic*
 
 ## Configure your Spring Boot application to use the Azure Service Bus starter
@@ -253,6 +252,7 @@ public class Application {
 The `main()` method uses Spring Boot’s `SpringApplication.run()` method to launch an application. `JmsTemplate` makes it very simple to send messages to a JMS destination. In the main runner method, after starting things up, you can just use `jmsTemplate` to send an `Employee` POJO. Because the `Employee` POJO is `Serializable`, the message will be converted automatically.
 
 > **Note**
+> >
 > &emsp; Replace `<DestinationName>` with your own queue name or topic name configured in your Service Bus namespace.
 
 ## Receive Spring JMS messages integrated with Azure Service Bus
@@ -299,7 +299,9 @@ You can configure your connection string (and client id) in `application.propert
     ```
 
 > **Note**
+> >
 > &emsp; Replace `<ServiceBusNamespaceConnectionString>` with the connection string of your Service Bus namespace.
+> >
 > &emsp; Replace `<ServiceBusTopicClientId>` with the client id for your Service Bus topic.
 
 ### Receive messages from a Service Bus queue
@@ -349,6 +351,7 @@ public class MessageReceiver {
 As with `Employee`, `MessageReceiver` is also known as a **message driven POJO**. The `JmsListener` annotation defines the name of the `Destination`  (i.e, the name of the queue) that this method should listen to and the reference to the `JmsListenerContainerFactory` to use to create the underlying message listener container. Because we have customized the way the container is built, the last attribute is necessary. The `receiveMessage()` method receives messages from the queue and print logs on the screen.
 
 > **Note**
+> >
 > &emsp; Replace `<ServiceBusQueueName>` with your own quene name configured in your Service Bus namespace.
 
 ### Receive messages from a Service Bus subscription
@@ -384,7 +387,9 @@ public void receiveTopicMessage(Employee employee) {
 The `JmsListener` annotation defines the name of the `Destination`  (i.e, the name of the topic) that this method should listen to, the name of the `Subscription` as well as the reference to the `JmsListenerContainerFactory` to use to create the underlying message listener container. Because we have customized the way the container is built, the `containerFactory` value should be designated. The `receiveTopicMessage()` method receives messages from the subscription and print logs on the screen.
 
 > **Note**
+> >
 > &emsp; Replace `<ServiceBusTopicName>` with your own topic name configured in your Service Bus namespace.
+> >
 > &emsp; Replace `<ServiceBusSubscriptionName>` with your own subscription name for your Service Bus topic.
 
 ## Run the program
