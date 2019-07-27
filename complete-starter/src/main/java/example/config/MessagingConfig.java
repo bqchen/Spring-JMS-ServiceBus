@@ -15,39 +15,39 @@ import javax.jms.ConnectionFactory;
 @Component
 public class MessagingConfig {
 
-    @Value("${azure.servicebus.connection-string}")
-    private String connectionString;
-
-    @Value("${spring.application.name}")
-    private String clientId;
-
-    @Bean
-    public ConnectionFactory jmsConnectionFactory() {
-        ConnectionStringBuilder csb = new ConnectionStringBuilder(connectionString);
-        String remoteUri = String.format("amqps://%s?amqp.idleTimeout=3600000", csb.getEndpoint().getHost());
-        JmsConnectionFactory jmsConnectionFactory = new JmsConnectionFactory(remoteUri);
-        jmsConnectionFactory.setRemoteURI(remoteUri);
-        jmsConnectionFactory.setClientID(clientId);
-        jmsConnectionFactory.setUsername(csb.getSasKeyName());
-        jmsConnectionFactory.setPassword(csb.getSasKey());
-//        jmsConnectionFactory.setReceiveLocalOnly(true);
-        return new CachingConnectionFactory(jmsConnectionFactory);
-    }
-
-    @Bean
-    public JmsTemplate jmsTemplate(ConnectionFactory jmsConnectionFactory) {
-        JmsTemplate returnValue = new JmsTemplate();
-        returnValue.setConnectionFactory(jmsConnectionFactory);
-        return returnValue;
-    }
-
-    // JmsListenerContainerFactory for Queue
-    @Bean
-    public JmsListenerContainerFactory jmsListenerContainerFactory(ConnectionFactory connectionFactory) {
-        DefaultJmsListenerContainerFactory returnValue = new DefaultJmsListenerContainerFactory();
-        returnValue.setConnectionFactory(connectionFactory);
-        return returnValue;
-    }
+//    @Value("${azure.servicebus.connection-string}")
+//    private String connectionString;
+//
+//    @Value("${spring.application.name}")
+//    private String clientId;
+//
+//    @Bean
+//    public ConnectionFactory jmsConnectionFactory() {
+//        ConnectionStringBuilder csb = new ConnectionStringBuilder(connectionString);
+//        String remoteUri = String.format("amqps://%s?amqp.idleTimeout=3600000", csb.getEndpoint().getHost());
+//        JmsConnectionFactory jmsConnectionFactory = new JmsConnectionFactory(remoteUri);
+//        jmsConnectionFactory.setRemoteURI(remoteUri);
+//        jmsConnectionFactory.setClientID(clientId);
+//        jmsConnectionFactory.setUsername(csb.getSasKeyName());
+//        jmsConnectionFactory.setPassword(csb.getSasKey());
+////        jmsConnectionFactory.setReceiveLocalOnly(true);
+//        return new CachingConnectionFactory(jmsConnectionFactory);
+//    }
+//
+//    @Bean
+//    public JmsTemplate jmsTemplate(ConnectionFactory jmsConnectionFactory) {
+//        JmsTemplate returnValue = new JmsTemplate();
+//        returnValue.setConnectionFactory(jmsConnectionFactory);
+//        return returnValue;
+//    }
+//
+//    // JmsListenerContainerFactory for Queue
+//    @Bean
+//    public JmsListenerContainerFactory jmsListenerContainerFactory(ConnectionFactory connectionFactory) {
+//        DefaultJmsListenerContainerFactory returnValue = new DefaultJmsListenerContainerFactory();
+//        returnValue.setConnectionFactory(connectionFactory);
+//        return returnValue;
+//    }
 
 //    // JmsListenerContainerFactory for Topic
 //    @Bean
