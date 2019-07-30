@@ -59,8 +59,6 @@ The following prerequisites are required in order to follow the steps in this ar
 
     `/users/example/home/starter/pom.xml`
 
-    ![project-pom](https://github.com/bqchen/Spring-JMS-ServiceBus/raw/master/figure/project-pom.jpg)
-
 2. Open the `pom.xml` file in a text editor and add the following lines to list of `<dependencies>`:
 
     ```xml
@@ -93,8 +91,6 @@ The following prerequisites are required in order to follow the steps in this ar
 
     `/users/example/home/starter/pom.xml`
 
-    ![project-pom](https://github.com/bqchen/Spring-JMS-ServiceBus/raw/master/figure/project-pom.jpg)
-
 2. Open the `pom.xml` file in a text editor and add the following lines to list of `<dependencies>`:
 
     ```xml
@@ -118,8 +114,6 @@ In a communication system that uses message middleware, there are two kinds of r
     -or-
 
     `/users/example/home/starter/pom.xml`
-
-    ![project-pom](./figure/project-pom.jpg)
 
 2. Open the `pom.xml` file in a text editor and add the following lines to list of `<dependencies>`:
 
@@ -289,8 +283,6 @@ You can configure your connection string (and client id) in `application.propert
 
 1. Navigate to `application.properties` file in your application `resources` folder.
 
-    ![project-resource](https://github.com/bqchen/Spring-JMS-ServiceBus/raw/master/figure/project-resource.jpg)
-
 2. Open the file and add below property with your Service Bus connection string. For information about how to get a connection string, visit [Prerequisites](#Prerequisites). When using Service Bus topics and durable subscriptions, remember to add client id as below.
 
     ```properties
@@ -394,14 +386,14 @@ The `JmsListener` annotation defines the name of the `Destination`  (i.e, the na
 
 ## Run the program
 
-If you use Service Bus queue, run the program to see the ouput similar to the following output, buried amidst all the logging:
+If you use Service Bus queue, run the program to see the ouput similar to the following output:
 
 ```
 Sending a welcome message.
 Received from queue <Welcome our new employee! {Name: exampleName, Id: 10001}>
 ```
 
-If you use Service Bus topic, run the program to see the output similar to the following ouput, buried amidst all the logging:
+If you use Service Bus topic, run the program to see the output similar to the following ouput:
 
 ```
 Sending a welcome message.
