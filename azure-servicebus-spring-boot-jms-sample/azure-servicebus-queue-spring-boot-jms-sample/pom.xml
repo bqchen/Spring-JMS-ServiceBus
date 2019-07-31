@@ -31,6 +31,14 @@
             <scope>test</scope>
         </dependency>
 
+        <!--Azure Service Bus-->
+        <dependency>
+            <groupId>com.microsoft.azure</groupId>
+            <artifactId>azure-servicebus</artifactId>
+            <version>1.2.15</version>
+        </dependency>
+        <!--End Azure Service Bus-->
+
         <!--Spring JMS-->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -38,14 +46,6 @@
             <version>5.1.8.RELEASE</version>
         </dependency>
         <!--End Spring JMS-->
-
-        <!--Azure Service Bus-->
-        <dependency>
-            <groupId>com.microsoft.azure</groupId>
-            <artifactId>azure-servicebus</artifactId>
-            <version>1.2.12</version>
-        </dependency>
-        <!--End Azure Service Bus-->
 
         <!--Qpid-->
         <dependency>
