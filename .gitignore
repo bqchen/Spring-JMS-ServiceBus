@@ -27,3 +27,10 @@ build/
 
 dependency-reduced-pom.xml
 README.html
+Reference-Ramblings.jpg
+Reference-SpringJMS.jpg
+*.pdf
+Get Started Spring Messaging with Azure Service Bus (revision).md
+How to use Spring Messaging with Azure Service Bus v3.0.1.md
+How to use Spring Messaging with Azure Service Bus v4.0.1.md
+*.txt
